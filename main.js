@@ -103,23 +103,6 @@ function buttonsFunctionality(passedNewTask, passedDate, passedKey) {
     const passedContent = passedNewTask.querySelector(".task-content");
     const container = document.querySelector("#tasks-container");
     const msg = container.querySelector("#no-tasks-msg");
-
-    // function for saving content after it's edited
-    function saveFun() {
-        // writing updated content to database
-        localStorage.setItem(
-            passedNewTask.id, 
-            JSON.stringify(
-            { date: passedDate, content: passedContent.textContent, key: passedKey }
-        ));
-
-        passedContent.setAttribute("contenteditable", "false");
-        done.removeAttribute("disabled");
-        done.classList.remove("disabled");
-
-        edit.classList.remove("hide");
-        save.classList.add("hide");
-    }
     
     // event listeners for action buttons
     edit.addEventListener("click", () => {
@@ -143,7 +126,22 @@ function buttonsFunctionality(passedNewTask, passedDate, passedKey) {
     });
 
 
-    save.addEventListener("click", saveFun())
+    save.addEventListener("click", () => {
+        // writing updated content to database
+        console.log("save");
+        localStorage.setItem(
+            passedNewTask.id, 
+            JSON.stringify(
+            { date: passedDate, content: passedContent.textContent, key: passedKey }
+        ));
+
+        passedContent.setAttribute("contenteditable", "false");
+        done.removeAttribute("disabled");
+        done.classList.remove("disabled");
+
+        edit.classList.remove("hide");
+        save.classList.add("hide");
+    })
 
     done.addEventListener("click", () => {
         // removes task from document
