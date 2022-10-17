@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TO-DO list 7000</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <script src="main2.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>Task list app</h1>
+        
+        <!--TODO: make form responsive-->
+        <form id="form">
+            <input type="text" 
+            id="new-task-input" 
+            placeholder="What have you planned?"
+            autoComplete="off">
+
+            <input type="submit" 
+            value="Add task" 
+            id="new-task-submit">
+        </form>
+    </header>
+
+    <h2>Tasks</h2>
+    <div id="tasks-container">
+        <div id="no-tasks-msg">You have no active tasks</div>
+    </div>
+</body>
+</html>
