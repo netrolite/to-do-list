@@ -18,7 +18,7 @@ if(localStorage.length > 1) {
             savedTasks.push(localStorage.getItem(localStorage.key(i))); 
          };
     }
-
+    
     // sorting saved tasks by date
     savedTasks.sort((x, y) => {
         xDate = JSON.parse(x);
